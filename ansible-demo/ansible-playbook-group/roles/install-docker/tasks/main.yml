@@ -1,0 +1,31 @@
+- name: Uninstalling Old Packages
+  yum:
+    name: "{{item}}"
+    state: absent
+  with_items:
+    - docker
+    - docker-common
+    - docker-engine
+    - docker-selinux
+    - docker-engine-selinux
+    - container-selinux
+
+- name: Adding Docker Repo
+  get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
+    force: yes
+
+- name: Installing Docker Package
+  yum:
+    name: docker-ce
+    state: present
+    update_cache: yes
+
+- name: Starting Docker Server
+  service:
+    name: docker
+    state: started
+
+- name: Adding Auto Start
+  command: systemctl enable docker

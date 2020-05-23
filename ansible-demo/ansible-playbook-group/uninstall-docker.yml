@@ -1,0 +1,4 @@
+- name: Uninstall Docker
+  hosts: servers
+  roles:
+    - uninstall-docker

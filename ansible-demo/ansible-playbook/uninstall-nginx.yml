@@ -1,0 +1,17 @@
+- name: Uninstall Nginx
+  hosts: servers
+  tasks:
+    - name: Stoping Nginx Server
+      service:
+        name: nginx
+        state: stopped
+    - name: Removing Nginx Package
+      yum:
+        name: nginx
+        state: absent
+    - name: Removing Nginx TCP Port
+      firewalld:
+        state: disabled
+        port: "{{nginx_http_port}}/tcp"
+        permanent: true
+        immediate: yes

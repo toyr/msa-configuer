@@ -1,0 +1,7 @@
+- name: Install Docker SDK for Python
+  hosts: servers
+  tasks:
+    - name: Installing docker-python Package
+      yum:
+        name: docker-python
+        update_cache: yes

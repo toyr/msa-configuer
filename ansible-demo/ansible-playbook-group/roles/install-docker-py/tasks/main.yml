@@ -1,0 +1,4 @@
+- name: Installing docker-python Package
+  yum:
+    name: docker-python
+    update_cache: yes

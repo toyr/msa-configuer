@@ -1,0 +1,6 @@
+- name: Start Nginx Container
+  hosts: servers
+  roles:
+    - install-docker
+    - install-docker-py
+    - start-nginx-container

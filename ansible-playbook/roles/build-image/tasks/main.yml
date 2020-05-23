@@ -1,0 +1,16 @@
+- name: Merging and Copying Dockerfile
+  template:
+    src: Dockerfile
+    dest: "{{TARGET_PATH}}/Dockerfile"
+
+- name: Merging and Copying application.properties
+  template:
+    src: application.properties
+    dest: "{{TARGET_PATH}}/application.properties"
+
+- name: Building and Pushing Docker Image
+  docker_image:
+    name: "{{docker_registry_address}}/{{ENV}}/{{JOB_NAME}}:{{BUILD_NUMBER}}"
+    path: "{{TARGET_PATH}}"
+    push: yes
+    force: yes

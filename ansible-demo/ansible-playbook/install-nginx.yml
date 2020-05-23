@@ -1,0 +1,17 @@
+- name: Install Nginx
+  hosts: servers
+  tasks:
+    - name: Installing Nginx Package
+      yum:
+        name: nginx
+        update_cache: yes
+    - name: Starting Nginx Server
+      service:
+        name: nginx
+        state: started
+    - name: Adding Nginx TCP Port
+      firewalld:
+        state: enabled
+        port: "{{nginx_http_port}}/tcp"
+        permanent: true
+        immediate: yes

@@ -1,0 +1,12 @@
+{
+  "name": "service-gateway",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.15.3",
+    "http-proxy": "^1.16.2",
+    "node-zookeeper-client": "^0.2.2"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}

@@ -1,0 +1,4 @@
+- name: Config Docker
+  hosts: servers
+  roles:
+    - config-docker

@@ -1,0 +1,6 @@
+- name: Starting Docker Container
+  docker_container:
+    name: "{{JOB_NAME}}"
+    image: "{{docker_registry_address}}/{{ENV}}/{{JOB_NAME}}:{{BUILD_NUMBER}}"
+    ports:
+      - "8080"

@@ -1,0 +1,9 @@
+- name: Start Nginx Container
+  hosts: servers
+  tasks:
+    - name: Starting Nginx Container
+      docker_container:
+        name: nginx
+        image: nginx
+        ports:
+          - "{{nginx_http_port}}:80"

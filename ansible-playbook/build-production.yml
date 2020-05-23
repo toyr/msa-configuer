@@ -1,0 +1,6 @@
+- name: Copy Config and Bulid Image
+  hosts: localhost
+  roles:
+    - build-image
+  vars_files:
+    - vars/production.yml

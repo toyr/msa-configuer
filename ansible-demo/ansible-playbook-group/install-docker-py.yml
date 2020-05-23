@@ -1,0 +1,4 @@
+- name: Install Docker SDK for Python
+  hosts: servers
+  roles:
+    - install-docker-py

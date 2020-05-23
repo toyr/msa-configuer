@@ -1,0 +1,4 @@
+- name: Uninstall Nginx
+  hosts: servers
+  roles:
+    - uninstall-nginx

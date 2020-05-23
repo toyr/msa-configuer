@@ -1,0 +1,19 @@
+- name: Stoping Docker Server
+  service:
+    name: docker
+    state: stopped
+
+- name: Uninstalling Docker Package
+  yum:
+    name: docker-ce
+    state: absent
+
+- name: Removing Docker Repo
+  file:
+    path: /etc/yum.repos.d/docker-ce.repo
+    state: absent
+
+- name: Removing Docker Home
+  file:
+    path: /var/lib/docker
+    state: absent

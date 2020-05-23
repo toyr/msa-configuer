@@ -1,0 +1,4 @@
+- name: Removing Nginx Container
+  docker_container:
+    name: nginx
+    state: absent

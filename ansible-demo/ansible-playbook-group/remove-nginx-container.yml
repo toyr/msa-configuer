@@ -1,0 +1,4 @@
+- name: Remove Nginx Container
+  hosts: servers
+  roles:
+    - remove-nginx-container

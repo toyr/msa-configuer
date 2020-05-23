@@ -1,0 +1,6 @@
+docker_registry_address: 192.168.199.215:5000
+
+mysql_address: 192.168.199.215:3306
+mysql_username: root
+mysql_password: root
+database_name: demo

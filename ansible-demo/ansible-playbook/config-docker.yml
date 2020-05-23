@@ -1,0 +1,12 @@
+- name: Config Docker Daemon
+  hosts: servers
+  tasks:
+    - name: Copying Docker Daemon File
+      copy:
+        src: daemon.json
+        dest: /etc/docker/daemon.json
+        mode: 0600
+    - name: Restrating Docker Server
+      service:
+        name: docker
+        state: restarted

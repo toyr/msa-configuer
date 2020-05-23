@@ -1,0 +1,5 @@
+[servers]
+192.168.199.215
+
+[servers:vars]
+nginx_http_port=80
